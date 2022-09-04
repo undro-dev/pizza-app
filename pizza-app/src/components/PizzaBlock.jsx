@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
-export const PizzaBlock = props => {
-	const { imageUrl, name, price, sizes, types } = props;
+export const PizzaBlock = ({ imageUrl, name, price, sizes, types }) => {
 	const typeNames = ['тонкое', 'традиционное'];
 
-	const [activeType, setActiveType] = useState(0);
-	const [activeSize, setActiveSize] = useState(0);
+	const [activeType, setActiveType] = useState(types[0]);
+	const [activeSize, setActiveSize] = useState(types[0]);
 
 	return (
 		<div className='pizza-block'>
