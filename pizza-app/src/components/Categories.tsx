@@ -1,9 +1,14 @@
-import { useState } from 'react';
-import { CategoryItem } from './CategoryItem';
+import { CategoryItem } from './CategoryItem.tsx';
 
-export const Categories = ({ value, onClickCategories }) => {
-	const [activeIndex, setActiveIndex] = useState(0);
+type CategoriesProps = {
+	value: number;
+	onClickCategories: (i: number) => void;
+};
 
+export const Categories: React.FC<CategoriesProps> = ({
+	value,
+	onClickCategories,
+}) => {
 	const categories = [
 		'Все',
 		'Мясные',
@@ -12,10 +17,6 @@ export const Categories = ({ value, onClickCategories }) => {
 		'Острые',
 		'Закрытые',
 	];
-
-	// const onClickCategory = index => {
-	// 	setActiveIndex(index);
-	// };
 
 	return (
 		<div className='categories'>
